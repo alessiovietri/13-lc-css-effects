@@ -1,0 +1,102 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* REGOLE GENERALI */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* MAIN */
+main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.square {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation-name: moveSquare;
+    animation-duration: 10s;
+    animation-iteration-count: 4;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-direction: alternate-reverse;
+}
+
+.square span {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+button {
+    position: absolute;
+
+    right: 50%;
+    top: 50%;
+
+    animation-name: moveButton;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+	
+@keyframes moveButton {
+    0% {
+        right: 1000%;
+    }  
+    100% {
+        right: 50%;
+    }   
+}
+
+@keyframes moveSquare {
+    0% {
+        background-color: red; 
+        left: 0px; 
+        top: 0px;
+    }  
+    25% {
+        background-color: yellow; 
+        left: calc(100% - 200px); /* perché se metto left 100% mi esce dallo schermo e quindi lo riporto indietro della sua larghezza che è 200px */ 
+        top: 0px;
+    }  
+    50% {
+        background-color: blue; 
+        left: calc(100% - 200px); 
+        top: calc(100% - 200px);
+    }   
+    75% {
+        background-color: green; 
+        left: 0px; 
+        top: calc(100% - 200px);
+    } 
+    100% {
+        background-color: red; 
+        left: 0px; 
+        top: 0px;
+    }   
+}
+
+	
+@keyframes spin {
+    0% {
+        transform: rotate(calc(360deg / 4));
+    }   
+}
