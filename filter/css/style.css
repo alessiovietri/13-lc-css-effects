@@ -1,0 +1,52 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* REGOLE GENERALI */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* MAIN */
+main {
+    padding: 100px 0;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+main > div {
+    width: 40%;
+    margin-bottom: 30px;
+}
+
+main > div > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blur-filter {
+    filter: blur(5px);
+}
+
+.grayscale-filter {
+    filter: grayscale(0.75);
+}
+
+.sepia-filter {
+    filter: sepia(0.75);
+}
+
+.multi-filter {
+    filter: hue-rotate(90deg) brightness(2) saturate(0.6);
+}
+
+.black-icon {
+    filter: brightness(0);
+}
